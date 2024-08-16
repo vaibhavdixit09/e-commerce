@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState, useMemo } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,6 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select } from "@/components/ui/select";
 
 export default function Component() {
+  const router = useRouter();
   const [selectedFilters, setSelectedFilters] = useState({
     category: [],
     price: { min: 0, max: 1000 },
@@ -131,6 +133,7 @@ export default function Component() {
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
+
   return (
     <div className="grid grid-cols-1  md:grid-cols-[300px_1fr] gap-8 p-4 md:p-8">
       <div className="bg-gray-900 shadow-md p-6 h-[90vh] sticky top-0">
@@ -242,8 +245,9 @@ export default function Component() {
       <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {filteredProducts.map((product) => (
           <div
+            onClick={() => router.push(`/shop/${product.id}`)}
             key={product.id}
-            className="bg-gray-900 rounded-lg shadow-md overflow-hidden"
+            className="bg-gray-900 rounded-lg h-fit  shadow-md "
           >
             <img
               src="/placeholder.svg"
