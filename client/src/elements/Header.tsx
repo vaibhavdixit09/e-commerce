@@ -1,5 +1,6 @@
 import Link from "next/link";
-import logo from "../../public/shopping_logo.png";
+import logo from "../../public/title logo.png";
+
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -17,7 +18,7 @@ import {
 
 export default function Header() {
   return (
-    <header className="w-full bg-black text-muted-foreground">
+    <header className="w-full  bg-black text-muted-foreground">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <Link
           href="#"
@@ -37,11 +38,18 @@ export default function Header() {
         </div>
         <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
           <Link
-            href="#"
+            href="/"
             className="hover:underline  hover:underline-offset-4"
             prefetch={false}
           >
             Home
+          </Link>
+          <Link
+            href="/shop"
+            className="hover:underline hover:underline-offset-4"
+            prefetch={false}
+          >
+            Shop Now
           </Link>
           <Link
             href="#"
@@ -57,7 +65,8 @@ export default function Header() {
           >
             Contact Us
           </Link>
-          <DropdownMenu>
+
+          {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Link
                 href="#"
@@ -90,27 +99,27 @@ export default function Header() {
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
         </nav>
 
         <div className="hidden items-center gap-4 md:flex">
           <Link
-            href="#"
+            href="/auth/login"
             className="inline-flex h-9 items-center justify-center rounded-md bg-white px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
             prefetch={false}
           >
             Login
           </Link>
           <Link
-            href="#"
+            href="/auth/signup"
             className="inline-flex h-9 items-center justify-center rounded-md bg-white px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
             prefetch={false}
           >
             Register
           </Link>
           <Link
-            href="#"
-            className="inline-flex h-9 items-center justify-center rounded-md text-white bg-pink-500 px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+            href="/auth/become-seller"
+            className="inline-flex h-9 items-center justify-center rounded-md text-white bg-gradient-to-r from-pink-600 via-pink-500 to-pink-400 hover:bg-pink-700 px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
             prefetch={false}
           >
             Become a Seller
@@ -217,7 +226,7 @@ export default function Header() {
                 </Link>
                 <Link
                   href="#"
-                  className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-9 items-center justify-center rounded-md border border-input text-white px-4 text-sm font-medium shadow-sm transition-colors  focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50  bg-gradient-to-r from-pink-600 via-pink-500 to-pink-400 hover:bg-pink-700 "
                   prefetch={false}
                 >
                   Become a Seller

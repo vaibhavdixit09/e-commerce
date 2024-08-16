@@ -5,6 +5,7 @@ import { Inter as FontSans } from "next/font/google";
 
 import { cn } from "@/lib/utils";
 import Header from "@/elements/Header";
+import Footer from "@/elements/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 const fontSans = FontSans({
@@ -31,7 +32,119 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
 }
+
+// /**
+//  * v0 by Vercel.
+//  * @see https://v0.dev/t/9DUkFdHsWNI
+//  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
+//  */
+// import { Label } from "@/components/ui/label";
+// import { Input } from "@/components/ui/input";
+// import { Textarea } from "@/components/ui/textarea";
+// import { Button } from "@/components/ui/button";
+
+// export default function Component() {
+//   return (
+//     <div className="flex flex-col gap-12 md:gap-20">
+//       <section className="w-full">
+//         <div className="container px-4 md:px-6">
+//           <div className="grid gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
+//             <div className="space-y-4">
+//               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+//                 About Us
+//               </h2>
+//               <p className="text-muted-foreground md:text-xl/relaxed">
+//                 We are a team of passionate designers and developers who are
+//                 dedicated to creating beautiful and functional digital
+//                 experiences. Our mission is to empower businesses and
+//                 individuals to achieve their goals through innovative technology
+//                 solutions.
+//               </p>
+//             </div>
+//             <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
+//               <div className="flex flex-col items-center gap-2">
+//                 <img
+//                   src="/placeholder.svg"
+//                   width={100}
+//                   height={100}
+//                   alt="John Doe"
+//                   className="rounded-full"
+//                   style={{ aspectRatio: "100/100", objectFit: "cover" }}
+//                 />
+//                 <div className="text-center">
+//                   <h3 className="text-lg font-medium">John Doe</h3>
+//                   <p className="text-muted-foreground">Co-Founder, CEO</p>
+//                 </div>
+//               </div>
+//               <div className="flex flex-col items-center gap-2">
+//                 <img
+//                   src="/placeholder.svg"
+//                   width={100}
+//                   height={100}
+//                   alt="Jane Smith"
+//                   className="rounded-full"
+//                   style={{ aspectRatio: "100/100", objectFit: "cover" }}
+//                 />
+//                 <div className="text-center">
+//                   <h3 className="text-lg font-medium">Jane Smith</h3>
+//                   <p className="text-muted-foreground">Co-Founder, CTO</p>
+//                 </div>
+//               </div>
+//               <div className="flex flex-col items-center gap-2">
+//                 <img
+//                   src="/placeholder.svg"
+//                   width={100}
+//                   height={100}
+//                   alt="Michael Johnson"
+//                   className="rounded-full"
+//                   style={{ aspectRatio: "100/100", objectFit: "cover" }}
+//                 />
+//                 <div className="text-center">
+//                   <h3 className="text-lg font-medium">Michael Johnson</h3>
+//                   <p className="text-muted-foreground">Lead Designer</p>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+//       <section className="w-full">
+//         <div className="container px-4 md:px-6">
+//           <div className="grid gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
+//             <div className="space-y-4">
+//               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+//                 Contact Us
+//               </h2>
+//               <p className="text-muted-foreground md:text-xl/relaxed">
+//                 We'd love to hear from you! Fill out the form below and we'll
+//                 get back to you as soon as possible.
+//               </p>
+//             </div>
+//             <form className="grid gap-4">
+//               <div className="grid gap-1.5">
+//                 <Label htmlFor="name">Name</Label>
+//                 <Input id="name" placeholder="Enter your name" />
+//               </div>
+//               <div className="grid gap-1.5">
+//                 <Label htmlFor="email">Email</Label>
+//                 <Input id="email" type="email" placeholder="Enter your email" />
+//               </div>
+//               <div className="grid gap-1.5">
+//                 <Label htmlFor="message">Message</Label>
+//                 <Textarea id="message" placeholder="Enter your message" />
+//               </div>
+//               <Button type="submit" className="justify-self-start">
+//                 Submit
+//               </Button>
+//             </form>
+//           </div>
+//         </div>
+//       </section>
+//     </div>
+//   );
+// }
