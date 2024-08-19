@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import logo from "../../public/title logo.png";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import {
   DropdownMenu,
@@ -15,6 +18,7 @@ import {
   CollapsibleTrigger,
   CollapsibleContent,
 } from "@/components/ui/collapsible";
+import ProfileDropdown from "./ProfileDropdown";
 
 export default function Header() {
   return (
@@ -101,7 +105,6 @@ export default function Header() {
             </DropdownMenuContent>
           </DropdownMenu> */}
         </nav>
-
         <div className="hidden items-center gap-4 md:flex">
           <Link
             href="/auth/login"
@@ -125,6 +128,37 @@ export default function Header() {
             Become a Seller
           </Link>
         </div>
+        <div className="flex justify-center items-center h-screen ">
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Avatar className="cursor-pointer">
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-48 bg-black shadow-lg rounded-md p-2">
+              <DropdownMenuItem
+                onClick={() => {
+                  console.log("Account clicked");
+                  // Handle account logic here
+                }}
+                className="cursor-pointer p-2 rounded-md "
+              >
+                Account
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => {
+                  console.log("Logout clicked");
+                  // Handle logout logic here
+                }}
+                className="cursor-pointer p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600"
+              >
+                Logout
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+        {/* <ProfileDropdown></ProfileDropdown> */}
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="outline" size="icon" className="md:hidden">
