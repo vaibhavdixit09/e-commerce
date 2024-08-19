@@ -10,7 +10,6 @@ import login from "../../../../public/login.png";
 export default function Login() {
   const [formData, setFormData] = useState({
     email: "",
-    userType: "",
     password: "",
   });
 

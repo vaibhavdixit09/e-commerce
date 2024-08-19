@@ -19,8 +19,10 @@ import {
   CollapsibleContent,
 } from "@/components/ui/collapsible";
 import ProfileDropdown from "./ProfileDropdown";
+import { useAppSelector } from "@/lib/store/hooks";
 
 export default function Header() {
+  const cartLength = 0;
   return (
     <header className="w-full  bg-black text-muted-foreground">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
@@ -32,7 +34,7 @@ export default function Header() {
           <img src={logo.src} className="w-10 h-10" />
           <span className="sr-only">Acme Inc</span>
         </Link>
-        <div className="relative sm:hidden md:block">
+        <div className="relative hidden lg:block">
           <SearchIcon className="absolute left-2.5 top-2.5 h-4 w-4" />
           <Input
             type="search"
@@ -128,6 +130,29 @@ export default function Header() {
             Become a Seller
           </Link>
         </div>
+        <Link href="/cart" prefetch={false}>
+          <div className="relative py-2">
+            <div className="t-0 absolute left-3">
+              <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">
+                {cartLength}
+              </p>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="file: mt-4 h-6 w-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+              />
+            </svg>
+          </div>
+        </Link>
         <div className="flex justify-center items-center h-screen ">
           <DropdownMenu>
             <DropdownMenuTrigger>
@@ -137,24 +162,16 @@ export default function Header() {
               </Avatar>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-48 bg-black shadow-lg rounded-md p-2">
-              <DropdownMenuItem
-                onClick={() => {
-                  console.log("Account clicked");
-                  // Handle account logic here
-                }}
-                className="cursor-pointer p-2 rounded-md "
-              >
-                Account
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                onClick={() => {
-                  console.log("Logout clicked");
-                  // Handle logout logic here
-                }}
-                className="cursor-pointer p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600"
-              >
-                Logout
-              </DropdownMenuItem>
+              <Link href="/profile">
+                <DropdownMenuItem className="cursor-pointer p-2 rounded-md ">
+                  Account
+                </DropdownMenuItem>
+              </Link>
+              <Link href="/">
+                <DropdownMenuItem className="cursor-pointer p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600">
+                  Logout
+                </DropdownMenuItem>
+              </Link>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
@@ -264,6 +281,29 @@ export default function Header() {
                   prefetch={false}
                 >
                   Become a Seller
+                </Link>
+                <Link href="/cart" prefetch={false}>
+                  <div className="relative py-2">
+                    <div className="t-0 absolute left-3">
+                      <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">
+                        3
+                      </p>
+                    </div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className="file: mt-4 h-6 w-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                      />
+                    </svg>
+                  </div>
                 </Link>
               </div>
             </div>

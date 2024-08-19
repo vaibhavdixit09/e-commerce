@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function Profile() {
   return (
-    <div className="dark bg-muted text-muted-foreground min-h-dvh flex flex-col">
+    <div className="dark bg-muted text-muted-foreground   flex flex-col">
       {/* <header className="bg-card py-4 px-6 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <Avatar className="h-12 w-12">
@@ -24,20 +24,24 @@ export default function Profile() {
           <Button variant="destructive">Delete Profile</Button>
         </div>
       </header> */}
+
       <main className="flex-1  grid gap-6">
         <Card className="p-6">
           <CardHeader>
-            <CardTitle>Personal Information</CardTitle>
+            <CardTitle className="text-xl  md:text-2xl font-bold">
+              Personal Information
+            </CardTitle>
           </CardHeader>
-          <CardContent className="grid gap-4">
+          <CardContent className="grid gap-4 mt-4">
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="name">Name</Label>
-                <Input id="name" defaultValue="John Doe" />
+                <Label htmlFor="name">User Name</Label>
+                <Input className="p-5" id="name" defaultValue="John Doe" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
+                  className="p-5"
                   id="email"
                   type="email"
                   defaultValue="john@example.com"
@@ -47,32 +51,41 @@ export default function Profile() {
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone</Label>
-                <Input id="phone" defaultValue="+1 (555) 123-4567" />
+                <Input
+                  className="p-5"
+                  id="phone"
+                  defaultValue="+1 (555) 123-4567"
+                />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="location">Location</Label>
-                <Input id="location" defaultValue="New York, NY" />
+                <Label htmlFor="location">Address</Label>
+                <Input
+                  className="p-5"
+                  id="location"
+                  defaultValue="New York, NY"
+                />
               </div>
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="bio">Bio</Label>
-              <Textarea
-                id="bio"
-                defaultValue="I'm a software engineer and I love to code!"
-                className="min-h-[100px]"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" defaultValue="********" />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="confirm-password">Confirm Password</Label>
-              <Input
-                id="confirm-password"
-                type="password"
-                defaultValue="********"
-              />
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="password">Password</Label>
+                <Input
+                  className="p-5"
+                  id="password"
+                  type="password"
+                  defaultValue="********"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="confirm-password">Confirm Password</Label>
+                <Input
+                  className="p-5"
+                  id="confirm-password"
+                  type="password"
+                  defaultValue="********"
+                />
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -83,11 +96,13 @@ export default function Profile() {
           <CardContent className="grid gap-4">
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" defaultValue="********" />
+              <Input
+              className="p-5" id="password" type="password" defaultValue="********" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="confirm-password">Confirm Password</Label>
               <Input
+              className="p-5"
                 id="confirm-password"
                 type="password"
                 defaultValue="********"
@@ -96,9 +111,13 @@ export default function Profile() {
           </CardContent>
         </Card> */}
       </main>
-      <footer className=" py-4 px-6 flex justify-end gap-2">
-        <Button variant="outline">Cancel</Button>
-        <Button type="submit">Save Changes</Button>
+      <footer className="bg-black py-6 px-6 flex justify-end gap-2">
+        <Button className="bg-green-600 font-bold text-white ">
+          Save Changes
+        </Button>
+        <Button className="bg-red-600 font-bold  text-white">
+          Delete Account
+        </Button>
       </footer>
     </div>
   );

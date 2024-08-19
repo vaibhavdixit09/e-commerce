@@ -12,7 +12,14 @@ import { useEffect } from "react";
 import noImg from "../../../../public/6714987.jpg";
 import Link from "next/link";
 import { Router } from "next/router";
+import { useAppDispatch } from "@/lib/store/hooks";
+import { addToCart } from "@/lib/store/features/cart/CartSlice";
 export default function Product_page() {
+  const dispatch = useAppDispatch();
+  const handleAddToCart = (param: string) => {
+    console.log("Added to cart");
+    dispatch(addToCart(param));
+  };
   return (
     <div className="grid gap-8 md:grid-cols-2 items-start max-w-6xl mx-auto p-4 md:p-12">
       <div className="grid gap-6">
@@ -97,7 +104,11 @@ export default function Product_page() {
             </div>
           </div>
           <div className="flex flex-col gap-2 sm:flex-row">
-            <Button size="lg" className="flex-1  p-2">
+            <Button
+              onClick={() => handleAddToCart("test")}
+              size="lg"
+              className="flex-1  p-2"
+            >
               Add to Cart
             </Button>
             <Button size="lg" className="flex-1 p-2">
